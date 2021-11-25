@@ -18,7 +18,7 @@
 <div class="container py-2">
     <div class="jumbotron">
         <h1>User Profile</h1>
-        <form method="POST" action="profile.php" >
+        <form method="POST" action="?" >
             <div class="form-group">
                 <label>Username:</label>
                 <input type="text" class="form-control" name="username" value="<?php echo $row['username']; ?>"/>

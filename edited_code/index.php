@@ -12,7 +12,7 @@
   <div class="container py-2">
     <div class="jumbotron">
       <h1>Login</h1>
-      <form  method="POST" action="index.php">
+      <form  method="POST" action="?">
         <div class="form-group">
           <label>Username</label>
           <input type="text" class="form-control" name="username" placeholder="Enter Username">
