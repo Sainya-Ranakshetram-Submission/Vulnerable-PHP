@@ -11,8 +11,14 @@
   <?php include 'connection.php';
     session_start();
     $id=$_SESSION['id'];
-    $query=mysqli_query($connection,"SELECT * FROM users where id='$id'")or die(mysqli_error($connection));
-    $row=mysqli_fetch_array($query);
+    $query=$connection->prepare("SELECT * FROM users where id=:id");
+    $query->bindParam(':id', $id);
+    // Execute statement.
+    $query->execute();
+    // Set fetch mode to FETCH_ASSOC to return an array indexed by column name.
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    // Fetch result.
+    $row = $query->fetchColumn();
   ?>
 <body>
 <div class="container py-2">
@@ -44,8 +50,18 @@
         {
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $query = "UPDATE users SET username = '$username', email = '$email' WHERE id = '$id'";
-            $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+            $query = "UPDATE users SET username = :username, email = :email WHERE id = :id";
+            $sth = $connection->prepare($query);
+            // Bind parameters to statement variables.
+            $sth->bindParam(':id', $id);
+            $sth->bindParam(':username', $username);
+            $sth->bindParam(':email', $email);
+            // Execute statement.
+            $sth->execute();
+            // Set fetch mode to FETCH_ASSOC to return an array indexed by column name.
+            $sth->setFetchMode(PDO::FETCH_ASSOC);
+            // Fetch result.
+            $result = $sth->fetchColumn();
             header("Location: index.php");
         }  
         if(isset($_POST['logout']))

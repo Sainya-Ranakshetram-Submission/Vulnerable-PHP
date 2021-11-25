@@ -36,21 +36,21 @@
       $uname = $_POST['username'];
       $password = $_POST['password'];
       
-      $query=mysqli_query($connection,"SELECT * FROM users WHERE username ='$uname' AND password ='$password'") or die("Query Unsuccessfull:".mysqli_error($connection));
+      $query=$connection->prepare("SELECT * FROM users WHERE username = :uname  AND password = :password");
+      $query->bindParam(':uname', $uname);
+      $query->bindParam(':password', $password);
+      $query->execute();
 
-      if($query_run)
+      $query ->setFetchMode(PDO::FETCH_ASSOC);
+      // Fetch result.
+      $result = $query->fetchColumn();
+
+      if($result)
       {
         echo "Login Successfull";
       }
-
-      $num_rows=mysqli_num_rows($query);
-      $row=mysqli_fetch_array($query);
-
-      if($num_rows > 0)
-      {
-        $_SESSION["id"]=$row['id'];
+        $_SESSION["id"]=$result['id'];
         header("Location: profile.php?id=".$_SESSION["id"]);
-      }
     }
   ?>
 

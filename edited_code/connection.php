@@ -1,8 +1,7 @@
 <?php
     $dbuser = "root";
     $dbpass = "";
-    $dbname = "secure_coding";
-    $host = "localhost";
     error_reporting(0);
-    $connection = mysqli_connect($host, $dbuser, $dbpass, $dbname) or die("Connection Failed: ".mysqli_connect_errno());
+    $connection = new PDO('mysql:host=localhost;dbname=secure_coding', $dbuser, $dbpass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
