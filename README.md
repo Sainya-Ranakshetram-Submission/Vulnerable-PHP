@@ -8,5 +8,5 @@ This could be easy solved using the the Parameterized queries  and PDO (PHP Data
 **PHP Data Objects (PDO)**
 Many PHP developers access databases using mysql or mysqli extensions. It is possible to use parameterized queries with the mysqli extension but PHP 5.1 introduced a better way to work with databases: PHP Data Objects (PDO). PDO provides methods that make parameterized queries easy to use. It also makes the code easier to read and more portable – it works with several databases, not just MySQL.
 
-```
-Thus my edited 
+## Note
+Thus my edited is in [edited_code](https://github.com/Sainya-Ranakshetram-Submission/Vulnerable-PHP/tree/master/edited_code) directory and the given/unedited code is in [unedited_code](https://github.com/Sainya-Ranakshetram-Submission/Vulnerable-PHP/tree/master/unedited_code) directory.
