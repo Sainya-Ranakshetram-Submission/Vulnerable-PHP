@@ -12,3 +12,5 @@ Many PHP developers access databases using mysql or mysqli extensions. It is pos
 Thus my edited is in [edited_code](https://github.com/Sainya-Ranakshetram-Submission/Vulnerable-PHP/tree/master/edited_code) directory and the given/unedited code is in [unedited_code](https://github.com/Sainya-Ranakshetram-Submission/Vulnerable-PHP/tree/master/unedited_code) directory.
 
 [Refrence](https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/)
+
+[![Vulnerable PHP Challenge | Submission](http://img.youtube.com/vi/IJ8PmxJSops/0.jpg)](http://www.youtube.com/watch?v=IJ8PmxJSops "Vulnerable PHP Challenge | Submission")
